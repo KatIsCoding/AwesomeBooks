@@ -27,7 +27,12 @@ function showBook(object) {
 
     var deleteButton = document.createElement("button")
     deleteButton.addEventListener("click", () => {
-        console.log(name)
+        container.remove();
+        var filtered = books.filter( (element) => {
+            return element["bookTitle"] !== name;
+        });
+        books = filtered;
+        console.log(books);
     })
     deleteButton.innerText = "Delete"
     container.appendChild(deleteButton)
