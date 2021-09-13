@@ -9,3 +9,11 @@ function addBooks(title, author) {
 
     books.push(object);
 }
+
+function deleteBooks() {
+
+    var bookToDelete = document.getElementById('bookSection');
+    var children = bookToDelete.children;
+    children.forEach( this.filter());
+
+}
