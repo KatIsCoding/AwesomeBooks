@@ -53,7 +53,7 @@ window.onload = () => {
     addBooks();
   });
   if (localStorage.booksObjects !== undefined) {
-    books = JSON.parse(localStorage.booksObjects)
+    books = JSON.parse(localStorage.booksObjects);
     JSON.parse(localStorage.booksObjects).forEach((element) => {
       showBook(element);
     });
