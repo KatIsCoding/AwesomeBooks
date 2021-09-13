@@ -32,7 +32,7 @@ function showBook(object) {
             return element["bookTitle"] !== name;
         });
         books = filtered;
-        console.log(books);
+        localStorage["booksObjects"] = JSON.stringify(books)
     })
     deleteButton.innerText = "Delete"
     container.appendChild(deleteButton)
@@ -51,6 +51,7 @@ function addBooks() {
     }
     books.push(object);
     showBook(object);
+    localStorage["booksObjects"] = JSON.stringify(books)
 }
 
 
@@ -61,4 +62,9 @@ window.onload = () => {
     btn.addEventListener("click", () => {
         addBooks()
     })
+    if (localStorage["booksObjects"] !== undefined){
+        JSON.parse(localStorage["booksObjects"]).forEach(element => {
+            showBook(element)
+        });
+    }
 }
