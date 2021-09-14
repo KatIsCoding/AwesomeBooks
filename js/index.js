@@ -1,23 +1,26 @@
-class booksDatabase {
-    constructor(){
-        this.booksList = [];
-    }
-    addNewBook (bookInfo) {
-        this.booksList.push(bookInfo); 
-    }
-    deleteBook (bookInfo) {
-      this.booksList = this.booksList.filter((element) => element.bookTitle !== bookInfo.bookTitle);
-    }
+/* eslint-disable max-classes-per-file */
+class BooksDatabase {
+  constructor() {
+    this.booksList = [];
+  }
+
+  addNewBook(bookInfo) {
+    this.booksList.push(bookInfo);
+  }
+
+  deleteBook(bookInfo) {
+    this.booksList = this.booksList.filter((element) => element.bookTitle !== bookInfo.bookTitle);
+  }
 }
 
-var books = new booksDatabase();
+const Books = new BooksDatabase();
 
 function searchID(id) {
   return document.getElementById(id);
 }
 
-class Book{
-  constructor(title, author){
+class Book {
+  constructor(title, author) {
     this.bookTitle = title;
     this.bookAuthor = author;
   }
@@ -44,8 +47,8 @@ function showBook(object) {
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
     container.remove();
-    books.deleteBook(object)
-    localStorage.booksObjects = JSON.stringify(books.booksList);
+    Books.deleteBook(object);
+    localStorage.booksObjects = JSON.stringify(Books.booksList);
   });
   deleteButton.innerText = 'Delete';
   container.appendChild(deleteButton);
@@ -56,10 +59,10 @@ function showBook(object) {
 function addBooks() {
   const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
-  const object = new Book(title, author)
-  books.addNewBook(object);
+  const object = new Book(title, author);
+  Books.addNewBook(object);
   showBook(object);
-  localStorage.booksObjects = JSON.stringify(books.booksList);
+  localStorage.booksObjects = JSON.stringify(Books.booksList);
 }
 
 window.onload = () => {
@@ -68,7 +71,7 @@ window.onload = () => {
     addBooks();
   });
   if (localStorage.booksObjects !== undefined) {
-    books.booksList = JSON.parse(localStorage.booksObjects);
+    Books.booksList = JSON.parse(localStorage.booksObjects);
     JSON.parse(localStorage.booksObjects).forEach((element) => {
       showBook(element);
     });
