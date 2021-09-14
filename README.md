@@ -4,7 +4,7 @@
 
 > A book managing javascript app.
 
-![screenshot](./app_screenshot.png)
+![screenshot](https://cdn.discordapp.com/attachments/836699681123467274/887348037255577670/unknown.png)
 
 Add, delete and display your library of books
 
@@ -16,7 +16,7 @@ Add, delete and display your library of books
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://katiscoding.github.io/AwesomeBooks/)
 
 
 ## Getting Started
@@ -31,9 +31,24 @@ To get a local copy up and running follow these simple example steps.
  A modern web browser (Chrome, Firefox, Safari, Microsoft Edge)
 
 ### Usage
- Go to the [Live Demo Link](https://livedemo.com) provided and start storing your books
-
-
+ Clone the project using `git clone https://github.com/KatIsCoding/AwesomeBooks.git`
+ Open with your browser the `index.html` File
+ Or simply:
+ Go to the [Live Demo Link](https://katiscoding.github.io/AwesomeBooks/) provided and start storing your books
+ 
+## Run tests
+ Clone the project using `git clone https://github.com/KatIsCoding/AwesomeBooks.git`
+ Run `npx hint .` for html linters
+ Run `npx eslint .` for javascript linters
+ Run `npx stylelint "**/*.{css,scss}"` for style linters
+ 
+## Deployment
+ Clone this repository in one of yours
+ Got to Repo settings
+ Click on Pages
+ Select your branch
+ Click Save
+ After some time your website version should be live and public
 
 
 ## Authors
@@ -47,11 +62,11 @@ To get a local copy up and running follow these simple example steps.
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jose-f-silva/)
 
 
-👤 **Fabrizio**
+👤 **Fabrizio Gomez**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@KatIsCoding](https://github.com/KatIsCoding)
+- Twitter: [@fabriziogr211](https://twitter.com/fabriziogr211)
+- LinkedIn: [Fabrizio Gomez](https://www.linkedin.com/in/fabrizio-gomez-6a00801a3/)
 
 ## 🤝 Contributing
 
