@@ -1,4 +1,13 @@
-let books = [];
+class booksDatabase {
+    constructor(){
+        this.book = [];
+    }
+    addNewBook (bookInfo) {
+        this.book.push(bookInfo); 
+    }
+}
+
+const books = new booksDatabase();
 
 function searchID(id) {
   return document.getElementById(id);
