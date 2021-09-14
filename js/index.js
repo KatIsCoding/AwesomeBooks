@@ -1,13 +1,16 @@
 class booksDatabase {
     constructor(){
-        this.book = [];
+        this.booksList = [];
     }
     addNewBook (bookInfo) {
-        this.book.push(bookInfo); 
+        this.booksList.push(bookInfo); 
+    }
+    deleteBook (bookInfo) {
+      this.booksList = this.booksList.filter((element) => element.bookTitle !== bookInfo.bookTitle);
     }
 }
 
-const books = new booksDatabase();
+var books = new booksDatabase();
 
 function searchID(id) {
   return document.getElementById(id);
@@ -41,9 +44,8 @@ function showBook(object) {
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
     container.remove();
-    const filtered = books.filter((element) => element.bookTitle !== name);
-    books = filtered;
-    localStorage.booksObjects = JSON.stringify(books);
+    books.deleteBook(object)
+    localStorage.booksObjects = JSON.stringify(books.booksList);
   });
   deleteButton.innerText = 'Delete';
   container.appendChild(deleteButton);
@@ -55,9 +57,9 @@ function addBooks() {
   const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
   const object = new Book(title, author)
-  books.push(object);
+  books.addNewBook(object);
   showBook(object);
-  localStorage.booksObjects = JSON.stringify(books);
+  localStorage.booksObjects = JSON.stringify(books.booksList);
 }
 
 window.onload = () => {
@@ -66,7 +68,7 @@ window.onload = () => {
     addBooks();
   });
   if (localStorage.booksObjects !== undefined) {
-    books = JSON.parse(localStorage.booksObjects);
+    books.booksList = JSON.parse(localStorage.booksObjects);
     JSON.parse(localStorage.booksObjects).forEach((element) => {
       showBook(element);
     });
