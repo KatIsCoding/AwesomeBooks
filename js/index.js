@@ -23,14 +23,13 @@ class Book {
   constructor(title, author, id) {
     this.bookTitle = title;
     this.bookAuthor = author;
-    this.id = id
+    this.id = id;
   }
 }
 
 function showBook(object) {
   const name = object.bookTitle;
   const author = object.bookAuthor;
-  const id = object.id;
 
   const booksWrapper = searchID('booksSection');
 
@@ -61,7 +60,7 @@ function showBook(object) {
 function addBooks() {
   const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
-  const id = Date.now()
+  const id = Date.now();
   const object = new Book(title, author, id);
   Books.addNewBook(object);
   showBook(object);
