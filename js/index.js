@@ -4,6 +4,13 @@ function searchID(id) {
   return document.getElementById(id);
 }
 
+class Book{
+  constructor(title, author){
+    this.bookTitle = title;
+    this.bookAuthor = author;
+  }
+}
+
 function showBook(object) {
   const name = object.bookTitle;
   const author = object.bookAuthor;
@@ -38,10 +45,7 @@ function showBook(object) {
 function addBooks() {
   const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
-  const object = {
-    bookTitle: title,
-    bookAuthor: author,
-  };
+  const object = new Book(title, author)
   books.push(object);
   showBook(object);
   localStorage.booksObjects = JSON.stringify(books);
