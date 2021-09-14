@@ -9,7 +9,7 @@ class BooksDatabase {
   }
 
   deleteBook(bookInfo) {
-    this.booksList = this.booksList.filter((element) => element.bookTitle !== bookInfo.bookTitle);
+    this.booksList = this.booksList.filter((element) => element.id !== bookInfo.id);
   }
 }
 
@@ -20,15 +20,17 @@ function searchID(id) {
 }
 
 class Book {
-  constructor(title, author) {
+  constructor(title, author, id) {
     this.bookTitle = title;
     this.bookAuthor = author;
+    this.id = id
   }
 }
 
 function showBook(object) {
   const name = object.bookTitle;
   const author = object.bookAuthor;
+  const id = object.id;
 
   const booksWrapper = searchID('booksSection');
 
@@ -59,7 +61,8 @@ function showBook(object) {
 function addBooks() {
   const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
-  const object = new Book(title, author);
+  const id = Date.now()
+  const object = new Book(title, author, id);
   Books.addNewBook(object);
   showBook(object);
   localStorage.booksObjects = JSON.stringify(Books.booksList);
