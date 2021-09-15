@@ -1,6 +1,22 @@
+body {
+  background-color: rgb(182, 208, 226);
+}
+
 #addBook {
   display: flex;
   flex-direction: column;
   max-width: 200px;
   align-items: center;
+}
+
+.background-color {
+  background-color: #4682b4;
+}
+
+.title-font {
+  font-family: 'Merriweather', serif;
+}
+
+.content-font {
+  font-family: 'Merriweather Sans', sans-serif;
 }

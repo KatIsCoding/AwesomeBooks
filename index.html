@@ -5,20 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <section id='booksSection'>
-        <h2>Books</h2>
+
+    <section id="bookCont" class="container text-center p-1">
+        <div id="title"><h2 class="title-font">All awesome books</h2></div>
+        <div id="bookList" class="">
+            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0 border border-dark bg-white rounded content-font">
+            </ul>
+        </div>
     </section>
-
-
-    <section id="addBook">
-        <h2>Add a New Book</h2>
-        <input type="text" id="bookName">
-        <input type="text" id="bookAuthor">
-        <button type="button" id="addBookButton">Add Book</button>
+    <section id="addBook" class="container d-flex justify-content-center text-center p-1">
+        <div class="formCard background-color p-3 rounded">
+            <h5 class="text-white title-font">Add a New Book</h5>
+            <div class="p-2 content-font">
+                <input type="text" id="bookName" placeholder="Title">
+            </div>
+            <div class="p-2 content-font">
+                <input type="text" id="bookAuthor" placeholder="Author Name">
+            </div>
+            <div class="p-2 content-font">
+                <button type="button" id="addBookButton" class="btn btn-outline-light">Add Book</button>
+            </div>
+        </div>
     </section>
 
     <script src="./js/index.js"></script>
