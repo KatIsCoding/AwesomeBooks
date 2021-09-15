@@ -31,6 +31,8 @@ class Book {
   }
 }
 
+var background = true
+
 function showBook(object) {
   const name = object.bookTitle;
   const author = object.bookAuthor;
@@ -38,7 +40,13 @@ function showBook(object) {
   const booksWrapper = searchID('booksSection');
 
   const container = createElement("li");
-  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-6", "bg-secondary", "p-2");
+  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-6", "p-2");
+  if (background) {
+    container.classList.add("bg-secondary")
+    background = !background
+  } else {
+    background = !background
+  }
   container.id = name;
 
   const bookinfowrapper = createElement("div")
@@ -56,6 +64,16 @@ function showBook(object) {
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
     container.remove();
+    background = true
+    books = document.getElementsByClassName("bookGoesHere")
+    Array.prototype.forEach.call(books, (elem) => {
+      if (elem.classList.contains("bg-secondary") && !background) {
+        elem.classList.remove("bg-secondary")
+      } else if (!elem.classList.contains("bg-secondary") && background){
+        elem.classList.add("bg-secondary")
+      }
+      background = !background
+    })
     Books.deleteBook(object);
     localStorage.booksObjects = JSON.stringify(Books.booksList);
   });
