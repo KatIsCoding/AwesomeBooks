@@ -20,7 +20,7 @@ function searchID(id) {
 }
 
 function createElement(element) {
-  return document.createElement(element)
+  return document.createElement(element);
 }
 
 class Book {
@@ -31,7 +31,7 @@ class Book {
   }
 }
 
-var background = true
+let background = true;
 
 function showBook(object) {
   const name = object.bookTitle;
@@ -39,54 +39,54 @@ function showBook(object) {
 
   const booksWrapper = searchID('booksSection');
 
-  const container = createElement("li");
-  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-12", "p-2");
+  const container = createElement('li');
+  container.classList.add('bookGoesHere', 'd-flex', 'flex-row', 'justify-content-around', 'col-lg-12', 'p-2');
   if (background) {
-    container.classList.add("background-color")
-    background = !background
+    container.classList.add('background-color');
+    background = !background;
   } else {
-    background = !background
+    background = !background;
   }
   container.id = name;
 
-  const bookinfowrapper = createElement("div")
-  bookinfowrapper.classList.add("d-flex", "flex-row", "col-lg-6", "text-left")
+  const bookinfowrapper = createElement('div');
+  bookinfowrapper.classList.add('d-flex', 'flex-row', 'col-lg-6', 'text-left');
 
   const bookNameandAuthor = createElement('p');
-  bookNameandAuthor.classList.add("m-1")
-  bookNameandAuthor.innerText = "\""+name+"\" by "+author;
+  bookNameandAuthor.classList.add('m-1');
+  bookNameandAuthor.innerText = `"${name}" by ${author}`;
   bookinfowrapper.appendChild(bookNameandAuthor);
-  container.appendChild(bookinfowrapper)
+  container.appendChild(bookinfowrapper);
 
-  const buttonDiv = createElement("div")
-  buttonDiv.classList.add("col-md-4", "align-self-center")
+  const buttonDiv = createElement('div');
+  buttonDiv.classList.add('col-md-4', 'align-self-center');
 
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
     container.remove();
-    background = true
-    books = document.getElementsByClassName("bookGoesHere")
+    background = true;
+    const books = document.getElementsByClassName('bookGoesHere');
     Array.prototype.forEach.call(books, (elem) => {
-      if (elem.classList.contains("background-color") && !background) {
-        elem.classList.remove("background-color")
-      } else if (!elem.classList.contains("background-color") && background){
-        elem.classList.add("background-color")
+      if (elem.classList.contains('background-color') && !background) {
+        elem.classList.remove('background-color');
+      } else if (!elem.classList.contains('background-color') && background) {
+        elem.classList.add('background-color');
       }
-      background = !background
-    })
+      background = !background;
+    });
     Books.deleteBook(object);
     localStorage.booksObjects = JSON.stringify(Books.booksList);
   });
   deleteButton.innerText = 'Remove Book';
-  deleteButton.classList.add("btn", "btn-outline-danger");
-  buttonDiv.appendChild(deleteButton)
+  deleteButton.classList.add('btn', 'btn-outline-danger');
+  buttonDiv.appendChild(deleteButton);
   container.appendChild(buttonDiv);
 
   booksWrapper.appendChild(container);
 }
 
 function addBooks() {
-  const title =   searchID('bookName').value;
+  const title = searchID('bookName').value;
   const author = searchID('bookAuthor').value;
   const id = Date.now();
   const object = new Book(title, author, id);
