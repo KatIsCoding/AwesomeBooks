@@ -9,23 +9,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <section id='booksSection'>
-        <h2>Books</h2>
-    </section>
-
-
-    <section id="addBook">
-        <h2>Add a New Book</h2>
-        <input type="text" id="bookName">
-        <input type="text" id="bookAuthor">
-        <button type="button" id="addBookButton">Add Book</button>
-    </section>
 
     <section id="bookCont" class="container text-center">
         <div id="title"><h2>All awesome books</h2></div>
         <div id="bookList" class="">
-            <ul id="booksDisplayed" class="d-flex flex-column d-flex align-items-center">
+            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0">
                 <li class="bookGoesHere d-flex flex-row justify-content-around col-lg-6 bg-secondary p-2">
                     <div class="d-flex flex-row">
                         <p class="bookTitle m-1">This is a longer title to test by: Author</p>
@@ -59,7 +47,12 @@
                 </li>
             </ul>
         </div>
-        <div id="bookForm"></div>
+    </section>
+    <section id="addBook" class="container d-flex justify-content-center text-center">
+        <h5>Add a New Book</h5>
+        <input type="text" id="bookName">
+        <input type="text" id="bookAuthor">
+        <button type="button" id="addBookButton">Add Book</button>
     </section>
 
     <script src="./js/index.js"></script>

@@ -19,6 +19,10 @@ function searchID(id) {
   return document.getElementById(id);
 }
 
+function createElement(element) {
+  return document.createElement(element)
+}
+
 class Book {
   constructor(title, author, id) {
     this.bookTitle = title;
@@ -33,17 +37,21 @@ function showBook(object) {
 
   const booksWrapper = searchID('booksSection');
 
-  const container = document.createElement('div');
-  container.classList.add('bookContainer');
+  const container = createElement("li");
+  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-6", "bg-secondary", "p-2");
   container.id = name;
 
-  const bookName = document.createElement('h3');
-  bookName.innerText = name;
-  container.appendChild(bookName);
+  const bookinfowrapper = createElement("div")
+  bookinfowrapper.classList.add("d-flex", "flex-row")
 
-  const bookAuthor = document.createElement('h4');
-  bookAuthor.innerText = author;
-  container.appendChild(bookAuthor);
+  const bookNameandAuthor = createElement('p');
+  bookNameandAuthor.classList.add("m-1")
+  bookNameandAuthor.innerText = "\""+name+"\" by "+author;
+  bookinfowrapper.appendChild(bookNameandAuthor);
+  container.appendChild(bookinfowrapper)
+
+  const buttonDiv = createElement("div")
+  buttonDiv.classList.add("col-md-4")
 
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
@@ -51,14 +59,15 @@ function showBook(object) {
     Books.deleteBook(object);
     localStorage.booksObjects = JSON.stringify(Books.booksList);
   });
-  deleteButton.innerText = 'Delete';
-  container.appendChild(deleteButton);
+  deleteButton.innerText = 'Remove Book';
+  buttonDiv.appendChild(deleteButton)
+  container.appendChild(buttonDiv);
 
   booksWrapper.appendChild(container);
 }
 
 function addBooks() {
-  const title = searchID('bookName').value;
+  const title =   searchID('bookName').value;
   const author = searchID('bookAuthor').value;
   const id = Date.now();
   const object = new Book(title, author, id);
