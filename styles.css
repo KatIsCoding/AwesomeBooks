@@ -1,6 +1,14 @@
+body {
+  background-color: rgb(182, 208, 226);
+}
+
 #addBook {
   display: flex;
   flex-direction: column;
   max-width: 200px;
   align-items: center;
+}
+
+.background-color {
+  background-color: #4682B4;
 }

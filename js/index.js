@@ -40,9 +40,9 @@ function showBook(object) {
   const booksWrapper = searchID('booksSection');
 
   const container = createElement("li");
-  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-6", "p-2");
+  container.classList.add("bookGoesHere", "d-flex", "flex-row", "justify-content-around", "col-lg-12", "p-2");
   if (background) {
-    container.classList.add("bg-secondary")
+    container.classList.add("background-color")
     background = !background
   } else {
     background = !background
@@ -50,7 +50,7 @@ function showBook(object) {
   container.id = name;
 
   const bookinfowrapper = createElement("div")
-  bookinfowrapper.classList.add("d-flex", "flex-row")
+  bookinfowrapper.classList.add("d-flex", "flex-row", "col-lg-6", "text-left")
 
   const bookNameandAuthor = createElement('p');
   bookNameandAuthor.classList.add("m-1")
@@ -59,7 +59,7 @@ function showBook(object) {
   container.appendChild(bookinfowrapper)
 
   const buttonDiv = createElement("div")
-  buttonDiv.classList.add("col-md-4")
+  buttonDiv.classList.add("col-md-4", "align-self-center")
 
   const deleteButton = document.createElement('button');
   deleteButton.addEventListener('click', () => {
@@ -67,10 +67,10 @@ function showBook(object) {
     background = true
     books = document.getElementsByClassName("bookGoesHere")
     Array.prototype.forEach.call(books, (elem) => {
-      if (elem.classList.contains("bg-secondary") && !background) {
-        elem.classList.remove("bg-secondary")
-      } else if (!elem.classList.contains("bg-secondary") && background){
-        elem.classList.add("bg-secondary")
+      if (elem.classList.contains("background-color") && !background) {
+        elem.classList.remove("background-color")
+      } else if (!elem.classList.contains("background-color") && background){
+        elem.classList.add("background-color")
       }
       background = !background
     })
