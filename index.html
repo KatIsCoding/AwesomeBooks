@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,6 +20,46 @@
         <input type="text" id="bookName">
         <input type="text" id="bookAuthor">
         <button type="button" id="addBookButton">Add Book</button>
+    </section>
+
+    <section id="bookCont" class="container text-center">
+        <div id="title"><h2>All awesome books</h2></div>
+        <div id="bookList" class="">
+            <ul id="booksDisplayed" class="d-flex flex-column d-flex align-items-center">
+                <li class="bookGoesHere d-flex flex-row justify-content-around col-lg-6 bg-secondary p-2">
+                    <div class="d-flex flex-row">
+                        <p class="bookTitle m-1">This is a longer title to test by: Author</p>
+                    </div>
+                    <div class="col-md-4">
+                        <button>Remove Book</button>
+                    </div>
+                </li>
+                <li class="bookGoesHere d-flex flex-row justify-content-around col-lg-6 bg-secondary p-2">
+                    <div class="d-flex flex-row">
+                        <p class="bookTitle m-1">This is a longer title to test by: Author</p>
+                    </div>
+                    <div class="col-md-4">
+                        <button>Remove Book</button>
+                    </div>
+                </li>
+                <li class="bookGoesHere d-flex flex-row justify-content-around col-lg-6 bg-secondary p-2">
+                    <div class="d-flex flex-row">
+                        <p class="bookTitle m-1">This is a longer title to test by: Author</p>
+                    </div>
+                    <div class="col-md-4">
+                        <button>Remove Book</button>
+                </li>
+                <li class="bookGoesHere d-flex flex-row justify-content-around col-lg-6 bg-secondary p-2">
+                    <div class="d-flex flex-row">
+                        <p class="bookTitle m-1">This is a longer title to test by: Author</p>
+                    </div>
+                    <div class="col-md-4">
+                        <button>Remove Book</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="bookForm"></div>
     </section>
 
     <script src="./js/index.js"></script>
