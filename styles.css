@@ -12,3 +12,11 @@ body {
 .background-color {
   background-color: #4682B4;
 }
+
+.title-font {
+  font-family: 'Merriweather', serif;
+}
+
+.content-font {
+  font-family: 'Merriweather Sans', sans-serif;
+}
