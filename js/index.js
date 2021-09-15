@@ -78,6 +78,7 @@ function showBook(object) {
     localStorage.booksObjects = JSON.stringify(Books.booksList);
   });
   deleteButton.innerText = 'Remove Book';
+  deleteButton.classList.add("btn", "btn-outline-danger");
   buttonDiv.appendChild(deleteButton)
   container.appendChild(buttonDiv);
 

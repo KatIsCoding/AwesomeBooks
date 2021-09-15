@@ -13,20 +13,22 @@
     <section id="bookCont" class="container text-center p-1">
         <div id="title"><h2>All awesome books</h2></div>
         <div id="bookList" class="">
-            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0 border border-dark bg-white">
+            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0 border border-dark bg-white rounded">
             </ul>
         </div>
     </section>
     <section id="addBook" class="container d-flex justify-content-center text-center p-1">
-        <h5>Add a New Book</h5>
-        <div class="p-2">
-            <input type="text" id="bookName">
-        </div>
-        <div class="p-2">
-            <input type="text" id="bookAuthor">
-        </div>
-        <div class="p-2"></div>
-            <button type="button" id="addBookButton">Add Book</button>
+        <div class="formCard background-color p-3 rounded">
+            <h5 class="text-white">Add a New Book</h5>
+            <div class="p-2">
+                <input type="text" id="bookName" placeholder="Title">
+            </div>
+            <div class="p-2">
+                <input type="text" id="bookAuthor" placeholder="Author Name">
+            </div>
+            <div class="p-2"></div>
+                <button type="button" id="addBookButton" class="btn btn-outline-light">Add Book</button>
+            </div>
         </div>
     </section>
 
