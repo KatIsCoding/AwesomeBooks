@@ -10,9 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
 </head>
 <body>
-
+    <header class="navbar-expand">
+        <nav class="navbar d-flex justify-content-between">
+            <a href="#" class="navbar-brand flex-row">Awesome Books</a>
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a href="" class="nav-link">List</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Add New</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="dateDisplay" class="navbar d-flex flex-row-reverse">
+        </div>
+    </header>
     <section id="bookCont" class="container text-center p-1">
         <div id="title"><h2 class="title-font">All awesome books</h2></div>
         <div id="bookList" class="">
@@ -35,6 +53,11 @@
         </div>
     </section>
 
+    <footer class="footer p-2">
+        <div>
+            <span>Copyright 2021 Fabrizio Gomez & Sunny Díaz</span>
+        </div>
+    </footer>
     <script src="./js/index.js"></script>
 </body>
 </html>

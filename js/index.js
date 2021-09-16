@@ -1,4 +1,7 @@
 /* eslint-disable max-classes-per-file */
+
+
+
 class BooksDatabase {
   constructor() {
     this.booksList = [];
@@ -96,6 +99,8 @@ function addBooks() {
 }
 
 window.onload = () => {
+  var DateTime = luxon.DateTime;
+  document.getElementById('dateDisplay').innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
   const btn = searchID('addBookButton');
   btn.addEventListener('click', () => {
     addBooks();

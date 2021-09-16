@@ -2,6 +2,21 @@ body {
   background-color: rgb(182, 208, 226);
 }
 
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#addBook {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
 #addBook {
   display: flex;
   flex-direction: column;
