@@ -24,23 +24,12 @@ body {
   background-color: #f9f9f9;
 }
 
-/*
-#bookCont,
-#addBook,
-#contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1 0 auto;
-}
-*/
-
 #dateDisplay {
   font-size: x-small;
 }
 
 .footer {
   bottom: 0;
-    position: fixed;
-    width: 100%;
+  position: fixed;
+  width: 100%;
 }
