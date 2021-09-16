@@ -1,14 +1,12 @@
 body {
   background-color: rgb(182, 208, 226);
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
   display: flex;
   flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 .title-font {
@@ -28,14 +26,11 @@ body {
 }
 
 #addBook {
-  flex: 1 0 auto;
-}
-
-#addBook {
   display: flex;
   flex-direction: column;
   max-width: 200px;
   align-items: center;
+  flex: 1 0 auto;
 }
 
 #dateDisplay {
@@ -45,4 +40,3 @@ body {
 .footer {
   flex-shrink: 0;
 }
-
