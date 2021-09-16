@@ -5,27 +5,10 @@ body {
 html, body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
-}
-
-#addBook {
-  flex: 1 0 auto;
-}
-.footer {
-  flex-shrink: 0;
-}
-
-#addBook {
-  display: flex;
-  flex-direction: column;
-  max-width: 200px;
-  align-items: center;
-}
-
-.background-color {
-  background-color: #4682b4;
 }
 
 .title-font {
@@ -35,3 +18,31 @@ body {
 .content-font {
   font-family: 'Merriweather Sans', sans-serif;
 }
+
+.background-color {
+  background-color: #4682b4;
+}
+
+.clear-background {
+  background-color: #f9f9f9;
+}
+
+#addBook {
+  flex: 1 0 auto;
+}
+
+#addBook {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  align-items: center;
+}
+
+#dateDisplay {
+  font-size: x-small;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
