@@ -1,6 +1,5 @@
 body {
   background-color: rgb(182, 208, 226);
-  display: flex;
   flex-direction: column;
 }
 
@@ -25,18 +24,23 @@ body {
   background-color: #f9f9f9;
 }
 
-#addBook {
+/*
+#bookCont,
+#addBook,
+#contact {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
   align-items: center;
   flex: 1 0 auto;
 }
+*/
 
 #dateDisplay {
   font-size: x-small;
 }
 
 .footer {
-  flex-shrink: 0;
+  bottom: 0;
+    position: fixed;
+    width: 100%;
 }
