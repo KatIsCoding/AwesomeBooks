@@ -1,6 +1,5 @@
 /* eslint-disable max-classes-per-file */
-
-
+/* eslint-disable no-undef */
 
 class BooksDatabase {
   constructor() {
@@ -97,9 +96,40 @@ function addBooks() {
   showBook(object);
   localStorage.booksObjects = JSON.stringify(Books.booksList);
 }
+const targets = [];
+
+function updateSection(target) {
+  const element = searchID(target);
+  if (element.id === 'addBook') {
+    element.classList.add('d-flex');
+  }
+  element.classList.remove('d-none');
+
+  const notSelected = [];
+  targets.forEach((elem) => {
+    if (elem.id !== target) {
+      notSelected.push(elem);
+    }
+  });
+  notSelected.forEach((current) => {
+    current.classList.remove('d-flex');
+    current.classList.add('d-none');
+  });
+}
+
+function eventHandlers() {
+  const nav = searchID('nav-items');
+  Array.prototype.forEach.call(nav.children, (child) => {
+    const a = child.children[0];
+    targets.push(searchID(a.dataset.target));
+    a.addEventListener('click', () => {
+      updateSection(a.dataset.target);
+    });
+  });
+}
 
 window.onload = () => {
-  var DateTime = luxon.DateTime;
+  const { DateTime } = luxon;
   document.getElementById('dateDisplay').innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
   const btn = searchID('addBookButton');
   btn.addEventListener('click', () => {
@@ -111,4 +141,5 @@ window.onload = () => {
       showBook(element);
     });
   }
+  eventHandlers();
 };
