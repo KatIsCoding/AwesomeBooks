@@ -1,16 +1,11 @@
 body {
   background-color: rgb(182, 208, 226);
-}
-
-#addBook {
-  display: flex;
   flex-direction: column;
-  max-width: 200px;
-  align-items: center;
 }
 
-.background-color {
-  background-color: #4682b4;
+html,
+body {
+  height: 50%;
 }
 
 .title-font {
@@ -19,4 +14,21 @@ body {
 
 .content-font {
   font-family: 'Merriweather Sans', sans-serif;
+}
+
+.background-color {
+  background-color: #4682b4;
+}
+
+.clear-background {
+  background-color: #f9f9f9;
+}
+
+#dateDisplay {
+  font-size: x-small;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
 }

@@ -10,17 +10,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js">
+    </script>
 </head>
 <body>
-
-    <section id="bookCont" class="container text-center p-1">
+    <header class="navbar-expand content-font rounded pb-5">
+        <nav class="navbar d-flex justify-content-between background-color border border-dark">
+            <a href="#" class="navbar-brand flex-row text-white">Awesome Books</a>
+            <ul id="nav-items" class="navbar-nav flex-row">
+                <li class="nav-item p-2">
+                    <button type="button" class="nav-link badge badge-light" data-target="bookCont">List</button>
+                </li>
+                <li class="nav-item p-2">
+                    <button type="button" class="nav-link badge badge-light" data-target="addBook">Add New</button>
+                </li>
+                <li class="nav-item p-2">
+                    <button type="button" class="nav-link badge badge-light" data-target="contact">Contact</button>
+                </li>
+            </ul>
+        </nav>
+        <div id="dateDisplay" class="navbar d-flex flex-row-reverse clear-background border border-dark">
+        </div>
+    </header>
+    <section id="bookCont" class="container text-center p-3"> 
         <div id="title"><h2 class="title-font">All awesome books</h2></div>
         <div id="bookList" class="">
-            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0 border border-dark bg-white rounded content-font">
+            <ul id="booksSection" class="d-flex flex-column d-flex align-items-center p-0 border border-dark clear-background rounded content-font">
             </ul>
         </div>
     </section>
-    <section id="addBook" class="container d-flex justify-content-center text-center p-1">
+    <section id="addBook" class="container justify-content-center text-center p-3 d-none"> <!--When shown, use d-flex-->
         <div class="formCard background-color p-3 rounded">
             <h5 class="text-white title-font">Add a New Book</h5>
             <div class="p-2 content-font">
@@ -35,6 +54,21 @@
         </div>
     </section>
 
+    <section id="contact" class="text-center d-none p-3">
+        <h2>Contact Information</h2>
+        <h4>Do you have questions? Send us a message!! <br> Here is how you can reach us:</h4>
+        <ul class="text-center list-unstyled">
+            <li>Our email: awesome@books.com</li>
+            <li>Our Phone Number: +1234567892</li>
+            <li>Our address: P. Sherman 42 Wallaby Way, Sydney </li>
+        </ul>
+    </section>
+
+    <footer class="p-2 mt-5 clear-background">
+        <div>
+            <span>Copyright 2021 Fabrizio Gomez & Sunny Díaz</span>
+        </div>
+    </footer>
     <script src="./js/index.js"></script>
 </body>
 </html>
