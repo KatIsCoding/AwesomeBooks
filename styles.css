@@ -1,5 +1,9 @@
 body {
   background-color: rgb(182, 208, 226);
+  background-image: url('/img/clip-library.png');
+  background-repeat: no-repeat;
+  height: auto;
+  background-size: cover;
   flex-direction: column;
 }
 
