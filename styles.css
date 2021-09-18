@@ -1,5 +1,9 @@
 body {
   background-color: rgb(182, 208, 226);
+  background-image: url('/img/clip-library.png');
+  background-repeat: no-repeat;
+  height: auto;
+  background-size: cover;
   flex-direction: column;
 }
 
@@ -31,4 +35,19 @@ body {
 .footer {
   bottom: 0;
   width: 100%;
+}
+
+.footer-background {
+  height: 5rem;
+  width: auto;
+}
+
+.bg-paddding {
+  background-image: url('/img/macaroni-1537.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 100%;
+  width: auto;
+  background-size: contain;
+  display: block;
 }
