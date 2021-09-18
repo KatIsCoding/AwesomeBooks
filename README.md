@@ -4,7 +4,7 @@
 
 > A book managing javascript app.
 
-![screenshot](https://cdn.discordapp.com/attachments/836699681123467274/887348037255577670/unknown.png)
+![screenshot](img/thumbnail.jpg)
 
 Add, delete and display your library of books
 
